@@ -1,0 +1,29 @@
+Name             : Aman Banka
+Registration No. : 261100660030
+Course           : AME 5151 - Applied Linear Algebra Lab
+Assignment       : Assignment 2 - Semantic Tagging with GloVe and NumPy
+Institution      : Manipal School of Information Sciences, MAHE, Manipal
+Faculty          : Dr. Devi Prasad
+
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python
+cachedir: .pytest_cache
+rootdir: /home/claude/submission
+plugins: platformdirs-4.13.3, anyio-4.15.1
+collecting ... collected 13 items
+
+test_semantic_tagging.py::TestSemanticTagging::test_01_tag_matrix_shape PASSED [  7%]
+test_semantic_tagging.py::TestSemanticTagging::test_01b_tag_rows PASSED  [ 15%]
+test_semantic_tagging.py::TestSemanticTagging::test_02_text_matrix_shape PASSED [ 23%]
+test_semantic_tagging.py::TestSemanticTagging::test_03_similarity_shape PASSED [ 30%]
+test_semantic_tagging.py::TestSemanticTagging::test_04_single_pair_agrees PASSED [ 38%]
+test_semantic_tagging.py::TestSemanticTagging::test_05_allclose PASSED   [ 46%]
+test_semantic_tagging.py::TestSemanticTagging::test_06_oov_excluded_and_reported PASSED [ 53%]
+test_semantic_tagging.py::TestSemanticTagging::test_07_oov_tag_raises PASSED [ 61%]
+test_semantic_tagging.py::TestSemanticTagging::test_08_preprocessing PASSED [ 69%]
+test_semantic_tagging.py::TestSemanticTagging::test_09_empty_text_matrix PASSED [ 76%]
+test_semantic_tagging.py::TestSemanticTagging::test_10_rank_tags PASSED  [ 84%]
+test_semantic_tagging.py::TestSemanticTagging::test_11_zero_row_rejected PASSED [ 92%]
+test_semantic_tagging.py::TestVectorClass::test_vector_ops PASSED        [100%]
+
+============================== 13 passed in 3.80s ==============================

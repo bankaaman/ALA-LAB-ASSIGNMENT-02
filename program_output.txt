@@ -1,0 +1,77 @@
+Name             : Aman Banka
+Registration No. : 261100660030
+Course           : AME 5151 - Applied Linear Algebra Lab
+Assignment       : Assignment 2 - Semantic Tagging with GloVe and NumPy
+Institution      : Manipal School of Information Sciences, MAHE, Manipal
+Faculty          : Dr. Devi Prasad
+
+==============================================================================
+Semantic Tagging with GloVe (glove-wiki-gigaword-50) and NumPy
+==============================================================================
+Model loaded: 400000 words, dimension 50
+
+[Part A] 20 tags: research, innovation, education, university, students, faculty, campus, engineering, medicine, technology, curriculum, collaboration, publication, laboratory, scholarship, mentorship, internship, entrepreneurship, alumni, higher education
+         multi-word tags (mean of component vectors): ['higher education']
+
+[Part B] Input file: manipal_linkedin_text.txt
+
+[Part C] Token statistics
+  Tokens before preprocessing        : 345
+  Tokens after preprocessing (m)     : 232
+  In-vocabulary tokens (n)           : 217
+  Out-of-vocabulary tokens           : 15
+  Distinct out-of-vocabulary tokens  : 15
+    ['digitalhealth', 'healthcareinnovation', 'hospitalmanagement', 'interdisciplinaryresearch', 'internationalrelations', 'mces', 'mitians', 'parba', 'psph', 'researchconference', 'researchexcellence', 'studentachievement', 'studentresearch', 'svasth26', 'undergraduateresearch']
+  Stopwords added to the starter set : 88
+
+[Part D] Checkpoint
+  T.shape = (20, 50)
+  W.shape = (217, 50)
+
+[Part E] S_vector.shape = (217, 20)  (Vector class, Python loops)
+[Part F] S_numpy.shape  = (217, 20)  (W_hat @ T_hat.T)
+
+[Part G] Verification
+  np.allclose(S_vector, S_numpy, rtol=1e-09, atol=1e-12) -> True
+  np.max(np.abs(S_vector - S_numpy)) = 5.551e-16
+
+[Part H] Top 8 tags by max-pool score  r_j = max_i S_ij
+
+Rank  Tag                Score    Best-matching text word   Match type
+------------------------------------------------------------------------------
+1     research           1.0000   research                  identical word
+2     innovation         1.0000   innovation                identical word
+3     university         1.0000   university                identical word
+4     education          1.0000   education                 identical word
+5     technology         1.0000   technology                identical word
+6     collaboration      1.0000   collaboration             identical word
+7     higher education   0.8871   education                 different word
+8     students           0.8824   student                   different word
+
+  Top-8 tags matched by an IDENTICAL word : ['research', 'innovation', 'university', 'education', 'technology', 'collaboration']
+  Top-8 tags matched by a DIFFERENT word  : ['higher education <- education', 'students <- student']
+
+  Full ranking of all 20 tags (for reference):
+
+Rank  Tag                Score    Best-matching text word   Match type
+------------------------------------------------------------------------------
+1     research           1.0000   research                  identical word
+2     innovation         1.0000   innovation                identical word
+3     university         1.0000   university                identical word
+4     education          1.0000   education                 identical word
+5     technology         1.0000   technology                identical word
+6     collaboration      1.0000   collaboration             identical word
+7     higher education   0.8871   education                 different word
+8     students           0.8824   student                   different word
+9     faculty            0.8258   university                different word
+10    curriculum         0.8087   educational               different word
+11    entrepreneurship   0.7957   innovation                different word
+12    laboratory         0.7919   research                  different word
+13    medicine           0.7853   studies                   different word
+14    engineering        0.7780   research                  different word
+15    campus             0.7697   university                different word
+16    alumni             0.7485   alumnus                   different word
+17    scholarship        0.7189   university                different word
+18    publication        0.6058   conducted                 different word
+19    internship         0.5761   program                   different word
+20    mentorship         0.5545   educational               different word
